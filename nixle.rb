@@ -1,6 +1,4 @@
 #!/usr/local/bin/ruby
-
-base_url = 'https://nixle.com/simi-valley-police-department/?page='
 require "net/https"
 require "uri"
 require 'mechanize'
@@ -27,7 +25,7 @@ while keep_movin do
     end
     advisory = agent.page.at('p.headline_agency')
     if advisory
-      puts advisory.text.match('/\@ [A-Za-z]')
+      puts advisory.text
     else
       break
     end
